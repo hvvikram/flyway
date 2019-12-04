@@ -40,6 +40,7 @@ public class Main {
         List<Map<String, Object>> results = jdbcTemplate.queryForList("select name from test_user");
         for (Map<String, Object> result : results) {
             System.out.println("Name: " + result.get("NAME"));
+            
         }
     }
 }
