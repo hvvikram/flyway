@@ -35,6 +35,8 @@ public class Main {
         flyway.setDataSource("jdbc:hsqldb:file:db/flyway_sample;shutdown=true", "SA", "");
         flyway.setLocations("db/migration", "com.googlecode.flyway.sample.migration");
         flyway.migrate();
+        
+        throw new RunTimeException();
 
         SimpleJdbcTemplate jdbcTemplate = new SimpleJdbcTemplate(flyway.getDataSource());
         List<Map<String, Object>> results = jdbcTemplate.queryForList("select name from test_user");
